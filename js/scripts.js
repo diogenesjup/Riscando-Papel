@@ -43,7 +43,7 @@ $( document ).ready(function() {
                                     navContainer: '.custom-nav-loop1',
                                     responsive:{
                                             0:{
-                                                items:1.5,
+                                                items:2.5,
                                                 margin:10
                                             },
                                             600:{
@@ -64,6 +64,24 @@ $( document ).ready(function() {
                             
 
 }); 
+
+
+
+// ABRIR E FECHAR MENU CLIENTE
+function abrirFecharMenuMobile(){
+
+      if($(".menu-mobile-side").hasClass("aberto")){
+         
+        $(".menu-mobile-side").removeClass("aberto");
+        
+      }else{
+
+        $(".menu-mobile-side").addClass("aberto");
+        
+      }
+
+}
+
 
 
 // MENU FIXO NAS PÁGINAS INTERNA
