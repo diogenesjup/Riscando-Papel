@@ -1,0 +1,62 @@
+#wpfooter,
+#wp-admin-bar-wp-logo{
+	opacity: 0 !important;
+}
+
+a.privacy-policy-link{
+    display: none !important;
+}
+
+#wp-admin-bar-wpseo-menu,
+#contextual-help-link-wrap{
+	display: none !important;
+}
+
+#login h1{
+	display: none !important;
+}
+
+#login #nav{
+	display: none;
+}
+#backtoblog{
+	display: none;
+}
+body.login{
+	background:#2BACB2 !important;
+}
+
+.wp-core-ui .button-primary.focus, .wp-core-ui .button-primary.hover, .wp-core-ui .button-primary:focus, .wp-core-ui .button-primary:hover {
+    background: #2BACB2 !important;
+    border-color: #2BACB2 !important;
+    color: #fff;
+}
+
+.wp-core-ui .button-primary {
+    background: #2BACB2 !important;
+    border-color: #2BACB2 !important;
+    box-shadow: 0 1px 0 #2BACB2  !important;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 0 -1px 1px #2BACB2, 1px 0 1px #2BACB2, 0 1px 1px #2BACB2, -1px 0 1px #2BACB2  !important;
+    border-radius: 0px !important;
+}
+
+#wp-version-message{
+	display: none;
+}
+
+#A2A_SHARE_SAVE_meta{
+	display: none;
+}
+
+
+#qtranxs-meta-box-lsb{
+    display: none !important;
+    opacity: 0 !important;
+}
+
+
+.yoast-alert.notice.notice-warning.is-dismissible{
+    display: none !important;
+}
