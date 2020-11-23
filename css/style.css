@@ -1522,6 +1522,269 @@ section.content .desc-categoria p{
 }
 
 
+.foto-produto{
+
+}
+
+.foto-produto img{
+  width: 100%;
+  height: auto;
+}
+
+
+
+.foto-produto .thumbs-produto{
+  padding-top: 14px;
+}
+
+.foto-produto .thumb-produto{
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 46px;
+  margin-right: 2px;
+  margin-bottom: 9px;
+  border: 1px solid #f2f2f2;
+}
+
+.foto-produto .thumbs-produto .thumb-produto a{
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+
+.info-produto{
+
+}
+
+@media(max-width: 540px){
+  .info-produto {
+    padding-top: 30px;
+  }
+}
+
+.info-produto h1{
+  font-weight: 600;
+  color: #4A4A4A;
+  font-size: 22px;
+  line-height: 28px;
+}
+
+.info-produto h1 small{
+  display: block;
+  color: #FCAF17;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  font-size: 15px;
+}
+
+.info-produto p{
+  color: #4A4A4A;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+
+
+
+
+.info-produto .form-check{
+  display: unset;
+  float: left;
+  padding-left: 0px;
+  width: auto;
+  text-align: center;
+  cursor: pointer !important;
+}
+
+.info-produto .form-check input{
+  display: none;
+  -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
+}
+
+.info-produto .form-check input{
+  -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
+}
+
+.info-produto .form-check label{
+  background: #fff;
+  height: 48px;
+  display: block;
+  width: 100%;
+  padding: 11px;
+  font-size: 15px;
+  cursor: pointer !important;
+}
+
+@media(max-width: 540px){
+    .info-produto .form-check label {
+      background: #fff;
+      height: 48px;
+      display: block;
+      width: 100%;
+      padding: 11px;
+      padding-top: 15px;
+      font-size: 12px;
+      cursor: pointer !important;
+  }
+}
+
+.info-produto .form-check label{
+  border-radius: 5px;
+  border: 1px solid #21d1d1;
+  opacity: 0.8;
+}
+
+.info-produto .form-check input:checked + label {
+  color:#fff;
+  background: #FF6C6C;
+  opacity: 1;
+  border: 1px solid #21d1d1;
+  filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
+
+  -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
+}
+
+
+.tools-produto{
+
+}
+
+@media(max-width: 540px){
+ .tools-produto {
+    padding-top: 30px;
+ }
+}
+
+.tools-produto p{
+  color: #4A4A4A;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.tools-produto p img{
+  width: 80px;
+  margin-left: 6px;
+}
+
+.tools-produto h2{
+  color: #FF6C6C;
+    font-weight: 600;
+    margin-bottom: 20px;
+    font-size: 38px;
+}
+.tools-produto h2 small{
+  display: block;
+  color: #4A4A4A;
+  padding-bottom: 8px;
+  font-size: 16px;
+}
+
+.tools-produto h2 small span{
+  color: #fff;
+  background: #FF6C6C;
+  border-radius: 5px;
+  display: block;
+  float: left;
+  width: 70px;
+  padding: 5px;
+  padding-bottom: 6px;
+  font-size: 11px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: -3px;
+  margin-right: 9px;
+} 
+
+.tools-produto .btn-primary,
+.tools-produto .btn-primary:hover,
+.tools-produto .btn-primary:active,
+.tools-produto .btn-primary:focus,
+.tools-produto .btn-primary:visited{
+    background: #FF6C6C !important;
+    border-color: #FF6C6C !important;
+    display: block;
+    border-radius: 0px !important;
+    font-weight: normal;
+    padding-top: 14px;
+    padding-bottom: 17px;
+
+}
+
+
+.tools-produto .caixa-simulador-frete{
+    position: relative;
+    display: block;
+    background: #f2f2f2;
+    border-radius: 5px;
+    padding: 14px;
+}
+
+.tools-produto .caixa-simulador-frete a{
+  text-decoration: none !important;
+  font-size: 13px;
+  float: right;
+  margin-top: -30px;
+}
+
+
+#caixa-cep,
+#caixa-cep label{
+  color: #4A4A4A;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+
+/* SIDEBAR MINHA CONTA */
+.sidebar-minha-conta ul {
+    padding-left: 0px !important;
+    padding-top: 14px !important;
+    margin-bottom: 25px !important;
+}
+
+.sidebar-minha-conta ul li a, 
+.sidebar-minha-conta ul li a:hover {
+    color: #747474 !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+}
+
+.sidebar-minha-conta ul li a i{
+  padding-right: 6px !important;
+}
+
+.sidebar-minha-conta ul li{
+    list-style: none !important;
+    padding-bottom: 20px !important;
+}
+
+
+/* CONTEÚDO MINHA CONTA */
+.conteudo-minha-conta{
+
+}
+
+.conteudo-minha-conta h2{
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 22px;
+  margin-bottom: 0px;
+  margin-top: 0px;
+  padding-top: 0px;
+  color: #2BACB2;
+}
+
+
+.conteudo-minha-conta p{
+  color: #747474;
+  font-size: 14px;
+  line-height: 22px;
+}
+
 
 
 

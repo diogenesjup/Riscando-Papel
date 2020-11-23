@@ -97,3 +97,81 @@ jQuery(document).ready(function ($) {
      }
   });
 });
+
+
+function mudarImagemProduto(srcImagem){
+    $("#imagemPrincipalProduto").attr("src",srcImagem);
+}
+
+
+function trocarCep(){
+   
+   $("#caixa-cep").html(`
+
+     <div class="form-group">
+         <label>Seu CEP:</label>
+         <input type="text" class="form-control form-control-sm" id="cepUsuario" placeholder="Digite seu CEP">
+     </div>
+     
+     <div class="form-group">
+        <button class="btn btn-secondary btn-sm" onclick="calcularCep();">Atualizar</button>
+     </div>
+
+   `);
+
+}
+
+
+function calcularCep(){
+   
+  //event.preventDefault();
+
+  var cepUsuario = $("#cepUsuario").val();
+  //var homeUrl    = $("#homeUrl").val();
+
+  $(".retorno-cep").html("<p>pesquisando junto aos correios...</p>");
+
+  console.log("ESSE É O CEP DO USUÁRIO: "+cepUsuario);
+
+              // INICIO CHAMADA AJAX
+              var request = $.ajax({
+
+                  method: "POST",
+                  url: "calcular-cep.php",
+                  data:{cepUsuario:cepUsuario}
+              
+              })
+              request.done(function (dados) {            
+
+                  console.log("%c RETORNO DA BUSCA DO CEP","background:#ff0000;color:#fff;");
+                  console.log(dados);
+
+                  $("#caixa-cep").html(dados);
+
+              });
+              request.fail(function (dados) {
+                     
+                   console.log("API NÃO DISPONÍVEL (calcularCep)");
+                   console.log(dados);
+
+                   $("#caixa-cep").html("Desculpe, os correios parecem estar fora do ar nesse momento. Tente novamente em alguns minutos.");
+                   
+              });
+              // FINAL CHAMADA AJAX
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
