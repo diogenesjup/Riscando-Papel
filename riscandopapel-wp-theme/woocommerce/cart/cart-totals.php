@@ -20,12 +20,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div style="width: 100% !important;" class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
 
 	<?php do_action( 'woocommerce_before_cart_totals' ); ?>
      
-	<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2>
-    <br clear="both">
+	<!--<h2><?php _e( 'Cart totals', 'woocommerce' ); ?></h2>
+    <br clear="both">-->
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 

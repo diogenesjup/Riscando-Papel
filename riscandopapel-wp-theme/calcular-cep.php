@@ -7,6 +7,7 @@
     $saida = "";
 
     $cep_destino = $_POST["cepUsuario"];
+    $homeUrl     = $_POST["homeUrl"];
 
 	$parametros = array();
 
@@ -18,7 +19,7 @@
 	$parametros['sDsSenha'] = '';
 
 	// CEP de origem e destino. Esse parametro precisa ser numérico, sem "-" (hífen) espaços ou algo diferente de um número.
-	$parametros['sCepOrigem'] = '06182110';
+	$parametros['sCepOrigem'] = '06150350';
 	$parametros['sCepDestino'] = $cep_destino;
 
 	// O peso do produto deverá ser enviado em quilogramas, leve em consideração que isso deverá incluir o peso da embalagem.
@@ -74,7 +75,7 @@
 			//echo "<span style='color:#747474;'>";
 
 			if($linhas->Codigo=="41106") $saida = $saida . "<p>Valor estimado do frete:</p>
-			<p style=''><img src='images/pac.png' style='height:24px;width:auto;margin-right:8px;' /> R$ ".$linhas->Valor." (".$linhas->PrazoEntrega." dias)</p>";
+			<p style=''><img src='".$homeUrl."images/pac.png' style='height:24px;width:auto;margin-right:8px;' /> R$ ".$linhas->Valor." (".$linhas->PrazoEntrega." dias)</p>";
 
 			//if($linhas->Codigo=="40010") echo "<p style='font-size:16px;'><img src='https://8rnuts.servidorseguro.cloud/wp-content/uploads/2020/09/sedex.png' style='height:24px;width:auto;margin-right:8px;' />";
 
@@ -162,7 +163,7 @@
 
 			//echo "<span style='color:#747474;'>";
 
-			if($linhas->Codigo=="40010") $saida = $saida . "<p style=''><img src='images/sedex.png' style='height:24px;width:auto;margin-right:8px;' /> R$ ".$linhas->Valor." (".$linhas->PrazoEntrega." dias)</p>";
+			if($linhas->Codigo=="40010") $saida = $saida . "<p style=''><img src='".$homeUrl."images/sedex.png' style='height:24px;width:auto;margin-right:8px;' /> R$ ".$linhas->Valor." (".$linhas->PrazoEntrega." dias)</p>";
 
 			//if($linhas->Codigo=="40010") echo "<p style='font-size:16px;'><img src='https://8rnuts.servidorseguro.cloud/wp-content/uploads/2020/09/sedex.png' style='height:24px;width:auto;margin-right:8px;' />";
 

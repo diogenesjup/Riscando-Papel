@@ -70,7 +70,10 @@ ysyss
 <meta name="theme-color" content="#21D1D1">
 
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/bootstrap.css" media="all" />
-<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/style.css" />
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/style.css?v=<?php echo date("dmYHisu"); ?>" />
+
+<link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/woocommerce.css?v=<?php echo date("dmYHisu"); ?>" />
+
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/sweetalert2.min.css">
 <!-- ICONES -->
 <link rel="stylesheet" href="<?php bloginfo('stylesheet_directory'); ?>/css/font-awesome.min.css">
@@ -86,6 +89,16 @@ ysyss
 
 <!-- OWL -->
 <link rel="stylesheet" type="text/css" href="<?php bloginfo('stylesheet_directory'); ?>/css/owl.carousel.min.css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M524TKWC8R"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M524TKWC8R');
+</script>
 
 <?php wp_head(); ?>
 
@@ -159,7 +172,7 @@ ysyss
                                     <?php
                                             else:
                                     ?>
-                                                 <li style="display:none;" class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a>
+                                                 <li class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a>
                                                       <ul>
                                                          <?php 
                                                            foreach($menu["children"] as $submenu){
@@ -225,10 +238,10 @@ ysyss
              
              <!-- BUSCA -->
              <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 busca">
-                 <form id="formBusca" method="post" action="<?php echo get_option('home'); ?>/">
+                 <form id="formBuscaFixo" method="post" action="<?php echo get_option('home'); ?>/">
                      <div class="form-group has-feedback">
                          <input type="text" class="form-control" placeholder="Pesquise por produtos" name="s" required>
-                         <i onclick="$('#formBusca').submit();" class="fa fa-search"></i>
+                         <i onclick="$('#formBuscaFixo').submit();" class="fa fa-search"></i>
                      </div>
                  </form>
              </div>
@@ -238,13 +251,14 @@ ysyss
              <!-- CONTATOS -->
              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 contatos">
                  <p>
-                     Fale Conosco (11) 9 3203-0565
+                     Fale Conosco: <?php the_field("telefone_fale_conosco",17433); ?>
                  </p>
              </div>
              <!-- CONTATOS -->
 
              <!-- CARRINHO -->
              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 carrinho">
+                    
                     
                     <a href="<?php echo get_option('home'); ?>/carrinho" title="Carrinho" class="toggle-carrinho">
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/carrinho.svg" alt="Carrinho" />
@@ -253,15 +267,34 @@ ysyss
                     <nav>
                         <ul>
                             <li>
-                                <a href="<?php echo get_option('home'); ?>/minha-conta" title="Entrar | Cadastrar">
-                                   Entrar | Cadastrar <i class="fa fa-angle-down"></i>
-                                </a>
+                                
+                                
+                                <?php if(!is_user_logged_in()): ?>
+
+                                  <a href="<?php echo get_option('home'); ?>/minha-conta" title="Entrar | Cadastrar">
+                                    Entrar | Cadastrar <i class="fa fa-angle-down"></i>
+                                  </a>
+
+                                <?php else: ?>
+                                   
+                                   <?php $current_user = wp_get_current_user(); ?>
+                                   
+                                   <a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha conta">
+                                    Bem vindo, <?php echo $current_user->user_login; ?> <i class="fa fa-angle-down"></i>
+                                  </a>
+
+                                <?php endif; ?>
+                                
+
+
                                <ul>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha conta">Minha conta</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Favoritos">Favoritos</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meus dados">Meus dados</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Endereços">Endereços</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Atendimento">Atendimento</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/"><i class="fa fa-user"></i> Minha conta</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/orders/"><i class="fa fa-archive"></i> Meus pedidos</a></li>
+                                  <!--<li><a href="#"><i class="fa fa-heart"></i> Favoritos</a></li>-->
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-address/"><i class="fa fa-home"></i> Meus endereços</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-account/"><i class="fa fa-pencil-square-o"></i> Dados pessoais</a></li>
+                                  <!--<li><a href="#"><i class="fa fa-usd"></i> Meus créditos</a></li>-->
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/customer-logout/?_wpnonce=fd4a690865"><i class="fa fa-sign-out"></i> Sair</a></li>
                                </ul>
                             </li>
                         </ul>
@@ -322,7 +355,7 @@ ysyss
              <!-- CONTATOS -->
              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 contatos">
                  <p>
-                     Fale Conosco (11) 9 3203-0565
+                     Fale Conosco: <?php the_field("telefone_fale_conosco",17433); ?>
                  </p>
              </div>
              <!-- CONTATOS -->
@@ -337,9 +370,20 @@ ysyss
                     <nav>
                         <ul>
                             <li>
-                                <a href="<?php echo get_option('home'); ?>/minha-conta" title="Entrar | Cadastrar">
-                                   Entrar | Cadastrar <i class="fa fa-angle-down"></i>
-                                </a>
+                                <?php if(!is_user_logged_in()): ?>
+
+                                  <a href="<?php echo get_option('home'); ?>/minha-conta" title="Entrar | Cadastrar">
+                                    Entrar | Cadastrar <i class="fa fa-angle-down"></i>
+                                  </a>
+
+                                <?php else: ?>
+                                <?php $current_user = wp_get_current_user(); ?>
+                                   
+                                   <a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha conta">
+                                    Bem vindo, <?php echo $current_user->user_login; ?> <i class="fa fa-angle-down"></i>
+                                  </a>
+
+                                <?php endif; ?>
                                <ul>
                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha conta">Minha conta</a></li>
                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Favoritos">Favoritos</a></li>

@@ -17,53 +17,29 @@
     <!-- LOOP MARCAS -->
     <div id="loopMarcas" class="loop-marcas owl-carousel owl-theme">
         
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca1.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
-             </div>
-         </div>
-         <!-- ITEM -->
+         <?php
 
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca2.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
-             </div>
-         </div>
-         <!-- ITEM -->
+          if( have_rows('marcas',17433) ):
+            $num_banner=0;
+              while ( have_rows('marcas',17433) ) : the_row();
 
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca3.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
-             </div>
-         </div>
-         <!-- ITEM -->
+        ?>
 
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca4.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
+             <!-- ITEM -->
+             <div class="item">
+                 <div class="caixa-marca" style="background: url('<?php the_sub_field("logo_da_marca"); ?>') transparent no-repeat;background-size: 60% auto;background-position: center center;">
+                     &nbsp;
+                 </div>
              </div>
-         </div>
-         <!-- ITEM -->
+             <!-- ITEM -->
 
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca5.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
-             </div>
-         </div>
-         <!-- ITEM -->
+         <?php
 
-         <!-- ITEM -->
-         <div class="item">
-             <div class="caixa-marca" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/marca7.png') transparent no-repeat;background-size: 60% auto;background-position: center center;">
-                 &nbsp;
-             </div>
-         </div>
-         <!-- ITEM -->
+                $num_banner++;
+              endwhile;
+          endif;
+
+        ?> 
 
     </div>
     <div class="controle-banner-na-loop1">
@@ -79,9 +55,6 @@
 
 </section>
 <!-- MARCAS -->
-
-
-
 
 
 <!-- FOOTER -->
@@ -107,13 +80,7 @@
                     
                     <h5>Palavras chaves:</h5>
                     <p>
-                        Eletronicos:  Appleo Laptop  |  Acero Laptop  |  Samsing Laptop  |  Lenov Laptop  |  Sonyo Laptop  |  Delli Laptop  |  Asuso Laptop  |  Toshibao Laptop  |  LGG Laptop  |  HPO Laptop
-                    </p>
-                    <p>
-                        Marcas:  FUKIO Watches   |  Titan Watches   |  Casioo Watches   |  Fastrack Watches   |  Timexi Watches   |   Fossili Watches   |  Dieselo Watches   |  Toshibao Watches   |  Luxury Watches
-                    </p>
-                    <p>
-                        Vestuário:  Shoes   |  Casual Shoes   |  Sports Shoes  |  Adidasi Shoes   |  Gas Shoes   |  Pumai Shoes   |  Reeboki Shoes   |  Woodlandi Shoes   |  Red Tape Shoes   |  Nikeo Shoes
+                        <?php the_field("palavras_chaves",17433); ?>
                     </p>
 
                 </div>
@@ -145,12 +112,11 @@
                     <div class="logos">
                         
                         <p>
-                            <a href="<?php echo get_option('home'); ?>/" title="Riscando Papel">
-                                <img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" alt="Riscando papel logo" />
-                            </a>
+                          <a href="<?php echo get_option('home'); ?>/" title="Riscando Papel">
+                             <img src="<?php bloginfo('stylesheet_directory'); ?>/images/logo.png" alt="Riscando papel logo" />
+                          </a>
                         </p>
                        
-
                     </div>
                 </div>
                 <!-- COLUNA UM -->
@@ -162,10 +128,39 @@
                             <h3>Políticas e Termos</h3>
                             <nav>
                                 <ul>
-                                    <li><a href="#" title="">Termos e Condições</a></li>
-                                    <li><a href="#" title="">Política de troca</a></li>
-                                    <li><a href="#" title="">Política de uso</a></li>
-                                    <li><a href="#" title="">Frete e entrega</a></li>
+                                    <?php $itens_menu = wp_get_menu_array("Políticas e Termos"); ?> 
+                                    <?php 
+                                     $menu_corrente = 0;
+                                     foreach($itens_menu as $menu){
+                                           
+                                           //if($menu_corrente==0) $classe = "todos-os-produtos";
+                                           //if($menu_corrente==1) $classe = "home";
+                                           //if($menu_corrente>1) $classe = "";
+
+                                               if(count($menu["children"])==0):
+                                    ?>
+                                                <li class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a></li>
+                                    <?php
+                                            else:
+                                    ?>
+                                                 <li class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a>
+                                                      <ul>
+                                                         <?php 
+                                                           foreach($menu["children"] as $submenu){
+                                                         ?>
+                                                            <li class="submenu-mobile"><a href="<?php echo $submenu["url"]; ?>" title="<?php echo $submenu["title"]; ?>"><?php echo $submenu["title"]; ?></a></li>
+                                                         <?php 
+                                                            }
+                                                         ?>
+                                                     </ul>
+                                                 </li>
+                                    <?php
+                                               endif;
+
+                                               $menu_corrente++;
+
+                                            }  
+                                    ?>
                                 </ul>
                             </nav>
                         </div>
@@ -175,11 +170,39 @@
                             <h3>Produtos</h3>
                             <nav>
                                 <ul>
-                                    <li><a href="#" title="">Categoria 1</a></li>
-                                    <li><a href="#" title="">Categoria 2</a></li>
-                                    <li><a href="#" title="">Categoria 3</a></li>
-                                    <li><a href="#" title="">Categoria de exemplo 4</a></li>
-                                    <li><a href="#" title="">Categoria 5</a></li>
+                                    <?php $itens_menu = wp_get_menu_array("Produtos"); ?> 
+                                    <?php 
+                                     $menu_corrente = 0;
+                                     foreach($itens_menu as $menu){
+                                           
+                                           //if($menu_corrente==0) $classe = "todos-os-produtos";
+                                           //if($menu_corrente==1) $classe = "home";
+                                           //if($menu_corrente>1) $classe = "";
+
+                                               if(count($menu["children"])==0):
+                                    ?>
+                                                <li class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a></li>
+                                    <?php
+                                            else:
+                                    ?>
+                                                 <li class="sou-categoria-<?php echo $menu["ID"] ?>"><a class="<?php echo $classe; ?>" href="<?php echo $menu["url"]; ?>" title=""><?php echo $menu["title"]; ?></a>
+                                                      <ul>
+                                                         <?php 
+                                                           foreach($menu["children"] as $submenu){
+                                                         ?>
+                                                            <li class="submenu-mobile"><a href="<?php echo $submenu["url"]; ?>" title="<?php echo $submenu["title"]; ?>"><?php echo $submenu["title"]; ?></a></li>
+                                                         <?php 
+                                                            }
+                                                         ?>
+                                                     </ul>
+                                                 </li>
+                                    <?php
+                                               endif;
+
+                                               $menu_corrente++;
+
+                                            }  
+                                    ?>
                                 </ul>
                             </nav>
                         </div>
@@ -189,10 +212,10 @@
                             <h3>Minha conta</h3>
                             <nav>
                                 <ul>
-                                    <li><a href="#" title="">Meus pedidos</a></li>
-                                    <li><a href="#" title="">Endereços</a></li>
-                                    <li><a href="#" title="">Meu perfil</a></li>
-                                    <li><a href="#" title="">Favoritos</a></li>
+                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meus Pedidos">Meus pedidos</a></li>
+                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Endereços">Endereços</a></li>
+                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meu perfil">Meu perfil</a></li>
+                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Favoritos">Favoritos</a></li>
                                 </ul>
                             </nav>
                         </div>
@@ -202,7 +225,7 @@
                             <h3>Newsletter</h3>
                             <p>Cadastre na nossa newsletter para receber novidades e ofertas (não enviaremos spams)</p>
                             
-                            <form method="post" action="">
+                            <form method="post" action="<?php bloginfo('stylesheet_directory'); ?>/newsletter.php" onSubmit="return ajaxSubmit(this);">
                                  <div class="input-group">
                                       <input type="text" class="form-control" placeholder="Seu melhor e-mail" required name="email">
                                       <div class="input-group-append">
@@ -215,17 +238,23 @@
 
                              <div class="social">
                                  
-                                 <a href="#" title="Nosso perfil no Facebook" target="_blank">
-                                     <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_facebook.svg" alt="Facebook" />
-                                 </a>
-
-                                 <a href="#" title="Nosso perfil no Instagram" target="_blank">
-                                     <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_instagram.svg" alt="Instagram" />
-                                 </a>
-
-                                 <a href="#" title="Nosso perfil no YouTube" target="_blank">
-                                     <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_youtube.svg" alt="YouTube" />
-                                 </a>
+                                 <?php if(get_field("link_perfil_facebook",17433)!=""): ?>
+                                     <a href="<?php the_field("link_perfil_facebook",17433); ?>" title="Nosso perfil no Facebook" target="_blank">
+                                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_facebook.svg" alt="Facebook" />
+                                     </a>
+                                 <?php endif; ?>
+                                 
+                                 <?php if(get_field("link_perfil_Instagram",17433)!=""): ?>
+                                     <a href="<?php the_field("link_perfil_Instagram",17433); ?>" title="Nosso perfil no Instagram" target="_blank">
+                                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_instagram.svg" alt="Instagram" />
+                                     </a>
+                                 <?php endif; ?>
+                                 
+                                 <?php if(get_field("link_perfil_youtube",17433)!=""): ?>
+                                     <a href="<?php the_field("link_perfil_youtube",17433); ?>" title="Nosso perfil no YouTube" target="_blank">
+                                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/icon_youtube.svg" alt="YouTube" />
+                                     </a>
+                                 <?php endif; ?>
 
                              </div>
 
@@ -255,18 +284,20 @@
 <!-- FOOTER -->
 
 
-
-<!-- BARRA DE NAVEGACAO MOBILE -->
-
-
-
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/tether.min.js"></script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/bootstrap.min.js"></script>
 
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/owl.carousel.min.js"></script>
 
-    <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/scripts.js"></script>
+    <script type="text/javascript">
+        
+        var homeUrl = "<?php bloginfo('stylesheet_directory'); ?>/";
+        var homeUrlDom = "<?php echo get_option('home'); ?>/";
+
+    </script>
+
+    <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/scripts.js?v=<?php echo date("dmYHisu"); ?>"></script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/sweetalert2.min.js"></script>
     <script type="text/javascript">
             // COMO FAZER A CHAMADA NO FORMULÁRIO onSubmit="return ajaxSubmit(this);"
@@ -285,7 +316,7 @@
                     type:'POST'
                 });
 
-                swal("Obrigado!", 'Sua mensagem foi enviada com sucesso', "success");
+                swal("Obrigado!", 'Seu e-mail foi salvo com sucesso', "success");
 
                 return false;
             }

@@ -286,6 +286,9 @@ header .menu-desktop{
 }
 
 @media(max-width: 540px){
+  .submenu-mobile{
+    padding-left: 30px;
+  }
   header .carrinho,
   header .menu-desktop{
     display: none;
@@ -387,6 +390,14 @@ section.home-vitrine .super-banner .owl-carousel{
 section.home-vitrine .super-banner .item{
   position: relative;
   height: 260px;
+}
+
+section.home-vitrine .super-banner .item a,
+section.home-vitrine .super-banner .item a:hover{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 @media(max-width: 540px){
@@ -1020,7 +1031,7 @@ footer .keywords p{
     font-family: 'Open Sans', sans-serif;
     color: #979797;
     font-size: 13px;
-    line-height: 20px;
+    line-height: 27px;
     margin-bottom: 4px;
 }
 @media(max-width: 540px){
@@ -1221,6 +1232,7 @@ footer .container{
         height: 100%;
         background: #fff;
         padding: 30px;
+        overflow-y: scroll !important;
         z-index: 999999999999;
         box-shadow: -2px 0px 20px rgba(0, 0, 0, 0.16);
         top:0;
@@ -1581,46 +1593,61 @@ section.content .desc-categoria p{
   font-size: 15px;
 }
 
-.info-produto p{
+.info-produto p,
+.info-produto ul,
+.info-produto ul li,
+.info-produto ol{
   color: #4A4A4A;
   font-size: 15px;
   line-height: 22px;
 }
+.info-produto ul,
+.info-produto ol{
+  padding-left: 0px;
+}
 
 
+.variacoes{
+      position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    clear: both;
+    margin-bottom: 20px;  
+}
 
-
-
-.info-produto .form-check{
-  display: unset;
-  float: left;
+.variacoes .form-check{
+  display: inline-block;
+  float: none;
   padding-left: 0px;
   width: auto;
   text-align: center;
   cursor: pointer !important;
+  margin-bottom: 14px;
 }
 
-.info-produto .form-check input{
+.variacoes .form-check input{
   display: none;
   -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
 }
 
-.info-produto .form-check input{
+.variacoes .form-check input{
   -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
 }
 
-.info-produto .form-check label{
+.variacoes .form-check label{
   background: #fff;
   height: 48px;
   display: block;
   width: 100%;
   padding: 11px;
-  font-size: 15px;
+  padding-top: 13px;
+  font-size: 12px;
   cursor: pointer !important;
 }
 
 @media(max-width: 540px){
-    .info-produto .form-check label {
+    .variacoes .form-check label {
       background: #fff;
       height: 48px;
       display: block;
@@ -1632,15 +1659,15 @@ section.content .desc-categoria p{
   }
 }
 
-.info-produto .form-check label{
+.variacoes .form-check label{
   border-radius: 5px;
   border: 1px solid #21d1d1;
   opacity: 0.8;
 }
 
-.info-produto .form-check input:checked + label {
-  color:#fff;
-  background: #FF6C6C;
+.variacoes .form-check input:checked + label {
+  color: #000;
+  background: #EAF5DE;
   opacity: 1;
   border: 1px solid #21d1d1;
   filter: drop-shadow(0px 3px 6px rgba(0, 0, 0, 0.16));
@@ -1689,7 +1716,7 @@ section.content .desc-categoria p{
   border-radius: 5px;
   display: block;
   float: left;
-  width: 70px;
+  width: 85px;
   padding: 5px;
   padding-bottom: 6px;
   font-size: 11px;
@@ -1714,6 +1741,14 @@ section.content .desc-categoria p{
 
 }
 
+.tools-produto .btn-default{
+    display: block;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    padding: 8px;
+    padding-bottom: 13px;
+}
+
 
 .tools-produto .caixa-simulador-frete{
     position: relative;
@@ -1727,7 +1762,7 @@ section.content .desc-categoria p{
   text-decoration: none !important;
   font-size: 13px;
   float: right;
-  margin-top: -30px;
+  margin-top: -23px;
 }
 
 
@@ -1785,9 +1820,23 @@ section.content .desc-categoria p{
   line-height: 22px;
 }
 
+.titulo-da-pagina-interna h2{
+  font-size: 32px !important;
+  margin-bottom: 20px !important;
+}
 
 
+.conteudo h1,
+.conteudo h2,
+.conteudo h3,
+.conteudo h4,
+.conteudo h5{
+  margin-bottom: 17px !important;
+}
 
-
+.conteudo img{
+  width: 100%;
+  height: auto;
+}
 
 

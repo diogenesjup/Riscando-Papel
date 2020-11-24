@@ -25,9 +25,9 @@ do_action( 'woocommerce_before_edit_account_address_form' ); ?>
 	<?php wc_get_template( 'myaccount/my-address.php' ); ?>
 <?php else : ?>
 
-	<form method="post">
+	<form method="post" class="colunas-woocommerce-novas">
 
-		<h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title, $load_address ); ?></h3><?php // @codingStandardsIgnoreLine ?>
+		<h3>Editar meu endereço salvo</h3><?php // @codingStandardsIgnoreLine ?>
 
 		<div class="woocommerce-address-fields">
 			<?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>

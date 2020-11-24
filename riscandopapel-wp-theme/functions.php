@@ -310,6 +310,10 @@ function parcelamentoValorParcela($regular,$sale,$parcelas){
 
 }
 
+add_filter( 'woocommerce_show_variation_price', '__return_true' );
+
+
+
 
 
 // ESTAMOS REDUZINDO O NÚMERO DE PALAVRAS E NAO DE CARACTERES
@@ -378,7 +382,36 @@ function disable_emojis_tinymce( $plugins ) {
   }
 }
 
+function get_free_shipping_minimum($zone_name = 'Brasil', $zone_name2 = 'OSASCO E COTIA') {
+    if ( ! isset( $zone_name ) ) return null;
 
+    $result = null;
+    $zone = null;
+
+    $zones = WC_Shipping_Zones::get_zones();
+    foreach ( $zones as $z ) {
+        if ( $z['zone_name'] == $zone_name ||  $z['zone_name'] == $zone_name2) {
+            $zone = $z;
+        }
+    }
+
+    if ( $zone ) {
+        $shipping_methods_nl = $zone['shipping_methods'];
+        $free_shipping_method = null;
+        foreach ( $shipping_methods_nl as $method ) {
+            if ( $method->id == 'free_shipping' ) {
+                $free_shipping_method = $method;
+                break;
+            }
+        }
+
+        if ( $free_shipping_method ) {
+            $result = $free_shipping_method->min_amount;
+        }
+    }
+
+    return $result;
+}
 
 
 ?>

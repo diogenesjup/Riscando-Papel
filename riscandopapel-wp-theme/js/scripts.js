@@ -11,8 +11,8 @@ $( document ).ready(function() {
                                     autoplay: true,
                                     center: true,
                                     navText: [
-                                        '<img src="images/esquerda.png" alt="Banner anterior">',
-                                        '<img src="images/direita.png" alt="Próximo Banner">'
+                                        '<img src="'+homeUrl+'images/esquerda.png" alt="Banner anterior">',
+                                        '<img src="'+homeUrl+'images/direita.png" alt="Próximo Banner">'
                                     ], 
                                     navContainer: '.custom-nav-banner2',
                                     autoplayTimeout:6500,
@@ -37,8 +37,8 @@ $( document ).ready(function() {
                                     center: true,
                                     autoplayHoverPause:true,
                                     navText: [
-                                        '<img src="images/esquerda.svg" alt="Página anterior">',
-                                        '<img src="images/direita.svg" alt="Próximo Página">'
+                                        '<img src="'+homeUrl+'images/esquerda.svg" alt="Página anterior">',
+                                        '<img src="'+homeUrl+'images/direita.svg" alt="Próximo Página">'
                                     ], 
                                     navContainer: '.custom-nav-loop1',
                                     responsive:{
@@ -114,7 +114,7 @@ function trocarCep(){
      </div>
      
      <div class="form-group">
-        <button class="btn btn-secondary btn-sm" onclick="calcularCep();">Atualizar</button>
+        <button class="btn btn-secondary btn-sm" onclick="calcularCep();">Calcular</button>
      </div>
 
    `);
@@ -137,8 +137,8 @@ function calcularCep(){
               var request = $.ajax({
 
                   method: "POST",
-                  url: "calcular-cep.php",
-                  data:{cepUsuario:cepUsuario}
+                  url: homeUrl+"calcular-cep.php",
+                  data:{cepUsuario:cepUsuario,homeUrl:homeUrl}
               
               })
               request.done(function (dados) {            
@@ -164,10 +164,43 @@ function calcularCep(){
 
 
 
+function activeVariation(idVariacao,urlImagemVariacao){
+            
+            console.log("USUÁRIO SELECIONOU O PRODUTO: "+idVariacao);
+            $("#btnComprar").attr("href",homeUrlDom+"?add-to-cart="+idVariacao);
+            $("#btnComprar").html(`ADICIONAR AO CARRINHO`);
+            
+            // MUDAR A IMAGEM DO PRODUTO
+            mudarImagemProduto(urlImagemVariacao);
+
+}
 
 
 
+function ordenarProdutos(ordenacao){
 
+  console.log("USUÁRIO QUER REORDENAR PRODUTOS DA PÁGINA DA LOJA");
+  console.log("ORDENAÇÃO POR: "+ordenacao);
+
+  /*
+   <option value="0">Ordenação:</option>
+   <option value="1">Ordenar por destaques</option>
+   <option value="2">Mais recentes</option>
+   <option value="3">Por preço: mais baratos para mais caros</option>
+   <option value="4">Por preço: mais caros para mais baratos</option>
+   <option value="5">Mais vendidos</option>
+
+  */
+  
+  console.log("DIRECIONANDO O USUÁRIO");
+
+  if(ordenacao==1 || ordenacao==0){ location.href="?ordenacao=default-list"; }
+  if(ordenacao==2){ location.href="?orderby=date"; }
+  if(ordenacao==3){ location.href="?orderby=price"; }
+  if(ordenacao==4){ location.href="?orderby=price-desc"; }
+  if(ordenacao==5){ location.href="?orderby=popularity"; }
+
+}
 
 
 

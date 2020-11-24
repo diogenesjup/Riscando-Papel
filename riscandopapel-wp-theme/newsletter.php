@@ -36,7 +36,7 @@ $mail->Subject  = "Novo e-mail para newsletter Riscando Papel"; // Assunto da me
 
 $email = $_POST["email"];
 
-$mail->Body = "<div style='font-family:Calibri;font-size:1.3em'>
+$mail->Body = "<div style='font-family:Arial;font-size:15px;'>
 
                     <h3>Novo e-mail para newsletter RISCANDO PAPEL</h3>
                     Esses dados vieram do formulário de <b>NEWSLETTER</b><br><br>

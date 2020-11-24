@@ -47,7 +47,7 @@
 
 h1.product_title.entry-title{
 
-	font-family: 'Lato', sans-serif;
+	font-family: 'Open Sans', sans-serif;
 
     color: #2D2C2C;
 
@@ -202,7 +202,7 @@ span.onsale{
 
    color: #414141;
 
-   font-family: 'Lato', sans-serif;
+   font-family: 'Open Sans', sans-serif;
 
    font-size: 13px;
 
@@ -279,7 +279,7 @@ span.onsale{
 /* BOTÃO DE COMPRA */
 
 .single_add_to_cart_button.button.alt{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #fff !important;
     font-size: 19px !important;
     border-radius: 45.04px;
@@ -431,7 +431,7 @@ span.onsale{
 
     color: #fff !important;
 
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 
     border-radius: 10px;
 
@@ -737,8 +737,8 @@ h2.woocommerce-order-details__title,
 
 h2.woocommerce-column__title{
 
-	color: #FA7923;
-    font-family: 'Lato', sans-serif;
+	color: #FF6C6C;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     font-family: 'Open Sans', sans-serif !important; 
     font-style: oblique;
@@ -764,7 +764,7 @@ h2.woocommerce-column__title{
 
     font-size: 18px !important;
 
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
     text-transform: none !important;
     font-weight: bold !important;
     border-radius: 0px !important;
@@ -825,7 +825,7 @@ h2.woocommerce-column__title{
 
 
 .woocommerce-MyAccount-navigation ul li a{
-   font-family: 'Lato', sans-serif !important;
+   font-family: 'Open Sans', sans-serif !important;
    text-transform: uppercase;
    color: #000;
   -webkit-transition:all 300ms ease;-moz-transition:all 300ms ease;transition:all 300ms ease;
@@ -835,7 +835,7 @@ h2.woocommerce-column__title{
 .woocommerce-MyAccount-navigation ul li:hover,
 .woocommerce-MyAccount-navigation ul li.active,
 .woocommerce-MyAccount-navigation ul li.is-active{
-  background: #FA7923 !important;
+  background: #FF6C6C !important;
   border-radius: 0px !important;
   padding-bottom: 10px !important;
   color: #fff !important;
@@ -1086,7 +1086,7 @@ color: #fff;
 
 
 .colunas-woocommerce-novas h3{
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Open Sans', sans-serif !important;
     text-transform: uppercase !important;
     font-size: 22px;
 }
@@ -1172,7 +1172,7 @@ color: #fff;
 
 @media(min-width: 541px){
     td.product-name{
-        max-width: 150px !important;
+        max-width: 450px !important;
     }
 }
 
@@ -1197,7 +1197,7 @@ color: #fff;
 .woocommerce-MyAccount-content h3,
 .woocommerce-MyAccount-content h4,
 .woocommerce-MyAccount-content h5{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-transform: uppercase;
     color: #257ebc;
 }
@@ -1218,7 +1218,7 @@ color: #fff;
 
 
 .single_add_to_cart_button.button.alt {
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     color: #fff !important;
     font-size: 19px !important;
     border-radius: 45.04px;
@@ -1286,8 +1286,112 @@ section.addresses .woocommerce .col2-set .col-2, section.addresses .woocommerce-
 
 
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
-    background-color: #FA7923 !important;
+    background-color: #FF6C6C !important;
     color: #fff;
     -webkit-font-smoothing: antialiased;
 }
+
+
+.woocommerce-input-wrapper{
+    width: 100%;
+}
+
+.woocommerce form .form-row input.input-text, .woocommerce form .form-row textarea {
+    box-sizing: border-box;
+    width: 100%;
+    margin: 0;
+    outline: 0;
+    line-height: normal;
+    font-size: 14px !important;
+}
+
+.woocommerce-billing-fields__field-wrapper,
+.woocommerce table.shop_table {
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px;
+    font-size: 14px !important;
+    background: #fff !important;
+    padding: 6px !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+.wc_payment_methods.payment_methods.methods{
+    border: 1px solid rgba(0,0,0,.1);
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    border-radius: 5px;
+    font-size: 14px !important;
+    background: #fff !important;
+    padding: 6px !important;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
+    padding: 26px !important;
+    margin-bottom: 20px;
+}
+
+.woocommerce .input-text{
+    padding: 10px;
+    color: #444;
+    background-color: #fff !important;
+    border: 1px solid #aaa !important;
+    border-radius: 4px !important;
+    height: 38px !important;
+    padding-top: 7px !important;
+}
+
+
+.quanto-falta-para-frete-gratis{
+    padding-top: 12px;
+    padding-bottom: 22px;
+}
+
+.quanto-falta-para-frete-gratis .progress {
+    display: -ms-flexbox;
+    display: flex;
+    height: 2.65rem;
+    /* padding-left: 20px; */
+    text-align: center;
+    overflow: hidden;
+    font-size: 0.75rem;
+    background-color: #f2f2f2;
+    border-radius: 0.25rem;
+}
+.quanto-falta-para-frete-gratis .progress-bar {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: #000;
+    padding-left: 20px;
+    text-align: center;
+    white-space: nowrap;
+    background-color: #EAF5DE;
+    transition: width 0.6s ease;
+}
+
+
+.woocommerce ul#shipping_method li label {
+    display: inline;
+    font-weight: normal;
+}
+.colunas-woocommerce-novas h3 {
+    font-family: 'Open Sans', sans-serif !important;
+    text-transform: none !important;
+    font-size: 20px;
+    margin-bottom: 13px !important;
+}
+
+#billing_outrapessoa{
+    height: 100px !important;
+}
+
+
+
 

@@ -12,7 +12,7 @@
                 </a>
                 <span>/</span>
                 <a href="#" title="Erro 404">
-                    Erro 404
+                    ERRO 404
                 </a>
                 
             </div>
@@ -21,17 +21,18 @@
 
          <!-- SESSAO DO CONTEUDO -->
         <div class="row desc-categoria">
-             <div class="row-2">
-                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <h2>Erro 404</h2>
+            
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center">
+                        <h2 style="font-size: 52px;">ERRO 404</h2>
+                        <p>&nbsp;</p>
                     </div>
-                    <div class="col-12 conteudo">
+                    <div class="col-12 conteudo text-center">
                         <p>Desculpe, essa página não existe ou foi apagada pelo administrador.</p>
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
                         <p>&nbsp;</p>
                     </div>
-            </div>
+       
         </div>
         <!-- SESSAO DO CONTEUDO -->
 

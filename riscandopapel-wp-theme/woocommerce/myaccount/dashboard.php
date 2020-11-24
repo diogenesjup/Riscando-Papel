@@ -24,16 +24,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
 	
-	<p><?php
-		/* translators: 1: user display name 2: logout url */
-		printf(
-			__( 'Hello %1$s (not %1$s? <a href="%2$s">Log out</a>)', 'woocommerce' ),
-			'<strong>' . esc_html( $current_user->display_name ) . '</strong>',
-			esc_url( wc_logout_url( wc_get_page_permalink( 'myaccount' ) ) )
-		);
-	?></p>
+	
 
 	<p>
+		 <!--
 		<?php global $current_user; get_currentuserinfo(); $profile_id = $current_user->ID; ?>
 		<b>Saldo Cashback:</b> 
 		<?php 
@@ -48,6 +42,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			}
 		  */
 		?>
+	-->
 	</p>
 
 	<p><?php

@@ -25,8 +25,22 @@ do_action( 'woocommerce_before_account_navigation' );
 <div class="row">
 	
 
-				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar sidebar-minha-conta">
 					
+					<h3>Olá, Diogenes</h3>
+	                 <nav>
+	                    <ul>
+	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/"><i class="fa fa-user"></i> Minha conta</a></li>
+	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/orders/"><i class="fa fa-archive"></i> Meus pedidos</a></li>
+	                        <!--<li><a href="#"><i class="fa fa-heart"></i> Favoritos</a></li>-->
+	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-address/"><i class="fa fa-home"></i> Meus endereços</a></li>
+	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-account/"><i class="fa fa-pencil-square-o"></i> Dados pessoais</a></li>
+	                        <!--<li><a href="#"><i class="fa fa-usd"></i> Meus créditos</a></li>-->
+	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/customer-logout/?_wpnonce=fd4a690865"><i class="fa fa-sign-out"></i> Sair</a></li>
+	                    </ul>
+	                </nav>
+
+                   <!--
 					<nav class="woocommerce-MyAccount-navigation sidebar">
 						<ul>
 							
@@ -46,16 +60,10 @@ do_action( 'woocommerce_before_account_navigation' );
 						
 							<?php endforeach; ?>
 							
-							<!--
-							<li>
-								<a href="javascript:void(0)" title="Suas assinaturas">
-								   Assinaturas <i class="fa fa-angle-right"></i>
-								</a>				
-							</li>
-						    -->
 
 						</ul>
 					</nav>
+				-->
 
 
 				</div>

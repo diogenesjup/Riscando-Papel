@@ -38,23 +38,20 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 		<div class="row" id="customer_details">
 
 
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 colunas-woocommerce-novas">
+			<div class="col-lg-7 col-md-7 col-sm-12 col-xs-12 colunas-woocommerce-novas">
 				<?php do_action( 'woocommerce_checkout_billing' ); ?>
 				<!--B.2 <?php do_action( 'woocommerce_checkout_shipping' ); ?>-->
 			</div>
 			
-            
-            
-            
-
+           
             <!-- REVISÃO DO PEDIDO -->
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 colunas-woocommerce-novas">
+			<div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 colunas-woocommerce-novas">
 
 				    <h3 id="order_review_heading">
-					2. Revisão do pedido
+					Revisão do pedido
 					</h3> 
                     <h5>Confirme seus produtos e frete</h5>
-					<br clear="both">
+				
 	                
                   <table class="shop_table woocommerce-checkout-review-order-table">
 						<thead>
@@ -147,33 +144,37 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 
 						</tfoot>
 					</table>
+
+					<p>&nbsp;</p>
+
+					<!-- FORMA DE PAGAMENTO -->
+					<div class="apenas-pagamento colunas-woocommerce-novas">
+
+						<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
+						
+						<h3 id="order_review_heading">
+							Pagamento
+						</h3>
+		                <h5>
+		                	Escolha forma de pagamento
+		                </h5>
+		            
+
+						<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
+						<div id="order_review" class="woocommerce-checkout-review-order">
+							<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+						</div>
+						<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
+						
+					</div>
+					<!-- FORMA DE PAGAMENTO -->
 				
 			</div>
 			<!-- REVISÃO DO PEDIDO -->
 
 
 
-			<!-- FORMA DE PAGAMENTO -->
-			<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 apenas-pagamento colunas-woocommerce-novas">
-
-				<?php do_action( 'woocommerce_checkout_before_order_review_heading' ); ?>
-				
-				<h3 id="order_review_heading">
-					3. Pagamento
-				</h3>
-                <h5>
-                	Escolha forma de pagamento
-                </h5>
-                <br clear="both">
-
-				<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
-				<div id="order_review" class="woocommerce-checkout-review-order">
-					<?php do_action( 'woocommerce_checkout_order_review' ); ?>
-				</div>
-				<?php do_action( 'woocommerce_checkout_after_order_review' ); ?>
-				
-			</div>
-			<!-- FORMA DE PAGAMENTO -->
+			
 
 
 		</div>
