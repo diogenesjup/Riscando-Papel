@@ -12,7 +12,7 @@ $mail->Host = "smtp.umbler.com"; // Endereço do servidor SMTP (caso queira util
 $mail->Port = 587;
 $mail->SMTPAuth = true; // Usar autenticação SMTP (obrigatório para smtplw.com)
 $mail->Username = 'site@servidorseguro.cloud'; // Usuário do servidor SMTP (site@enviador.casteloviana.com.br)
-$mail->Password = 'YbmA4f?B8('; // Senha do servidor SMTP (Website0--)
+$mail->Password = ''; // Senha do servidor SMTP (Website0--)
  
 // Define o remetente
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=

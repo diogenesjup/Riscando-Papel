@@ -300,6 +300,8 @@ function parcelamentoValor($regular,$sale){
 
 
 function parcelamentoValorParcela($regular,$sale,$parcelas){
+
+  $parcelas = 3;
        
        $preco = $regular;
        if($sale!="") $preco = $sale;

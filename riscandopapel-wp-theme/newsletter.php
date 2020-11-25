@@ -12,7 +12,7 @@ $mail->Host = "smtp.umbler.com"; // Endereço do servidor SMTP (caso queira util
 $mail->Port = 587;
 $mail->SMTPAuth = true; 
 $mail->Username = 'site@servidorseguro.cloud'; 
-$mail->Password = 'YbmA4f?B8('; 
+$mail->Password = ''; 
  
 // Define o remetente
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
