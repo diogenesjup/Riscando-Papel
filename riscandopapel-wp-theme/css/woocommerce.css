@@ -1318,7 +1318,7 @@ section.addresses .woocommerce .col2-set .col-2, section.addresses .woocommerce-
     padding: 6px !important;
     box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.05);
 }
-
+.create-account,
 .wc_payment_methods.payment_methods.methods{
     border: 1px solid rgba(0,0,0,.1);
     margin: 0 -1px 24px 0;
@@ -1393,5 +1393,19 @@ section.addresses .woocommerce .col2-set .col-2, section.addresses .woocommerce-
 }
 
 
+.woocommerce .btn-block {
+    display: block;
+    width: 100%;
+    color: #000;
+    font-size: 14px !important;
+    color: #666 !important;
+    text-decoration: none !important;
+}
+
+
+.woocommerce .accordion > .card .card-header {
+    margin-bottom: -1px;
+    padding-bottom: 0px;
+}
 
 

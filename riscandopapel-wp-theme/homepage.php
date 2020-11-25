@@ -171,7 +171,7 @@
 
 
             <!-- MINI BANNER -->
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 caixa-mini-banner mini-banner-laterais">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 caixa-mini-banner mini-banner-laterais">
 
                 <?php if(get_field("tipo_de_banner")!="imagem"): ?>
                 
@@ -263,7 +263,7 @@
             ?> 
             
             <!-- PRODUTO -->
-            <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
                 <div class="produto">
                     <div class="imagem-produto" style="background: url('<?php echo $image[0]; ?>') transparent no-repeat;background-size: 80% auto;background-position: center center;">
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">

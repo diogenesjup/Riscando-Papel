@@ -157,6 +157,13 @@ ysyss
               <nav>
                 <ul>
                   
+                  <li>
+                      <a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha Conta">
+                        Minha Conta
+                      </a>
+                  </li>
+
+
                   <?php $itens_menu = wp_get_menu_array("principal"); ?> 
                             <?php 
                                      $menu_corrente = 0;
@@ -191,11 +198,7 @@ ysyss
                                             }  
                                     ?> 
 
-                  <li>
-                      <a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha Conta">
-                        Minha Conta
-                      </a>
-                  </li>
+                  
 
                 </ul>
 
@@ -251,7 +254,9 @@ ysyss
              <!-- CONTATOS -->
              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 contatos">
                  <p>
-                     Fale Conosco: <?php the_field("telefone_fale_conosco",17433); ?>
+                     Fale Conosco: <a href="<?php the_field("link_api_whatsapp",17433); ?>" title="Clique para abrir o WhatsApp" target="_blank">
+                      <?php the_field("telefone_fale_conosco",17433); ?>
+                    </a>
                  </p>
              </div>
              <!-- CONTATOS -->
@@ -288,13 +293,13 @@ ysyss
 
 
                                <ul>
-                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/"><i class="fa fa-user"></i> Minha conta</a></li>
-                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/orders/"><i class="fa fa-archive"></i> Meus pedidos</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/">Minha conta</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/orders/"> Meus pedidos</a></li>
                                   <!--<li><a href="#"><i class="fa fa-heart"></i> Favoritos</a></li>-->
-                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-address/"><i class="fa fa-home"></i> Meus endereços</a></li>
-                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-account/"><i class="fa fa-pencil-square-o"></i> Dados pessoais</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-address/"> Meus endereços</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-account/">Dados pessoais</a></li>
                                   <!--<li><a href="#"><i class="fa fa-usd"></i> Meus créditos</a></li>-->
-                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/customer-logout/?_wpnonce=fd4a690865"><i class="fa fa-sign-out"></i> Sair</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/customer-logout/?_wpnonce=fd4a690865"> Sair</a></li>
                                </ul>
                             </li>
                         </ul>
@@ -355,7 +360,9 @@ ysyss
              <!-- CONTATOS -->
              <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 contatos">
                  <p>
-                     Fale Conosco: <?php the_field("telefone_fale_conosco",17433); ?>
+                     Fale Conosco: <a href="<?php the_field("link_api_whatsapp",17433); ?>" title="Clique para abrir o WhatsApp" target="_blank">
+                      <?php the_field("telefone_fale_conosco",17433); ?>
+                    </a>
                  </p>
              </div>
              <!-- CONTATOS -->

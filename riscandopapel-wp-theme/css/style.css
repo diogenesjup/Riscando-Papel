@@ -192,6 +192,11 @@ header .contatos{
   opacity: 0.7;
 }
 
+header .contatos a{
+   color: #4A4A4A;
+   text-decoration: none !important;
+}
+
 @media(max-width: 540px){
   header .contatos{
         padding-top: 0px;
@@ -408,6 +413,15 @@ section.home-vitrine .super-banner .item a:hover{
 }
 
 
+@media(min-width: 541px) and (max-width: 960){
+  section.home-vitrine .super-banner .item {
+      position: relative;
+      height: 260px;
+      background-size: 100% auto !important;
+      background-color: #f2f2f2 !important;
+  }
+}
+
 
 
 section.home-vitrine .controle-banner-na-homepage2{
@@ -581,6 +595,20 @@ section.home-vitrine #carousel-custom-dots li.owl-dot.active{
     flex-basis: auto;
     padding-bottom: 13px;
     text-align: center;
+  }
+}
+
+
+@media(min-width: 540px) and (max-width: 960px){
+    .mini-icones .col{
+      display: block !important;
+      -ms-flex-preferred-size: 0 !important;
+      flex-basis: 2  !important;
+      -ms-flex-positive: 1 !important;
+      flex-grow: 2 !important;
+      max-width: 100% !important;
+      position: relative !important;
+      width: 50% !important;
   }
 }
 
@@ -1538,6 +1566,17 @@ section.content .desc-categoria p{
 
 }
 
+.foto-produto .imagem-produto-grande{
+  overflow:hidden;
+  cursor: zoom-in;
+}
+
+.foto-produto .imagem-produto-grande.is-active{
+  cursor: none;
+}
+
+
+
 .foto-produto img{
   width: 100%;
   height: auto;
@@ -1725,6 +1764,22 @@ section.content .desc-categoria p{
   margin-top: -3px;
   margin-right: 9px;
 } 
+
+form .btn-primary,
+form .btn-primary:hover,
+form .btn-primary:active,
+form .btn-primary:focus,
+form .btn-primary:visited{
+    background: #FF6C6C !important;
+    border-color: #FF6C6C !important;
+    display: block;
+    border-radius: 0px !important;
+    font-weight: normal;
+    padding-top: 14px;
+    padding-bottom: 17px;
+
+}
+
 
 .tools-produto .btn-primary,
 .tools-produto .btn-primary:hover,

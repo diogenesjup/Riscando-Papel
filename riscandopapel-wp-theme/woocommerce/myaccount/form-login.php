@@ -31,10 +31,10 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
 		<div class="row">
 
-            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 offset-xl-1 offset-lg-1 offset-md-1 offset-sm-1 col-12">
+            <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-12">
                 <h2>Acesse sua conta</h2>
 
-        <form method="post" action="<?php echo get_option('home'); ?>/wp-login.php">
+        <form method="post" action="<?php echo get_option('home'); ?>/wp-login.php" style="margin-top: 33px;">
                     <!--
                     <input type="hidden" id="woocommerce-login-nonce" name="woocommerce-login-nonce" value="fb20d7d5b3">
                     <input type="hidden" name="_wp_http_referer" value="<?php echo get_option('home'); ?>/minha-conta/">    
@@ -57,8 +57,8 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
                               <label for="mantenhaConectado">Mantenha-me conectado.</label>
                             </p>
                         </div>
-                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 text-right">
-                            <button type="submit" class="btn btn btn-primary btn-extra-cadastro" style="margin-top: -15px;">Entrar</button>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn btn-primary btn-extra-cadastro" style="margin-top: -15px;float: right">Entrar</button>
                         </div>
                     </div>
                 </form>
@@ -76,7 +76,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 	
 			
             
-            <form method="post" class="woocommerce-form woocommerce-form-register register" style="background: #f2f2f2;">
+            <form method="post" class="woocommerce-form woocommerce-form-register register">
 
             <?php do_action( 'woocommerce_register_form_start' ); ?>
 
@@ -107,7 +107,7 @@ do_action( 'woocommerce_before_customer_login_form' ); ?>
 
             <p class="woocommerce-FormRow form-row">
                 <?php wp_nonce_field( 'woocommerce-register', 'woocommerce-register-nonce' ); ?>
-                <button type="submit" style="color:#fff !important;" class="woocommerce-Button button btn btn-primary" name="register" value="<?php esc_attr_e( 'Cadastrar', 'woocommerce' ); ?>"><?php esc_html_e( 'Cadastrar', 'woocommerce' ); ?></button>
+                <button type="submit" style="color:#fff !important;" class="btn btn-primary" name="register" value="<?php esc_attr_e( 'Cadastrar', 'woocommerce' ); ?>"><?php esc_html_e( 'Cadastrar', 'woocommerce' ); ?></button>
             </p>
 
             <?php do_action( 'woocommerce_register_form_end' ); ?>

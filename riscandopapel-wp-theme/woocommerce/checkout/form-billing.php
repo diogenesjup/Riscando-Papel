@@ -34,16 +34,108 @@ defined( 'ABSPATH' ) || exit;
 
 	<?php do_action( 'woocommerce_before_checkout_billing_form', $checkout ); ?>
 
-	<div class="woocommerce-billing-fields__field-wrapper" style="padding: 26px !important;">
+	<div class="woocommerce-billing-fields__field-wrapper" style="padding: 0px !important;border:none !important">
+    
+     <!-- ABRINDO CARD PANELS -->
+     <div class="accordion" id="accordionExample">
 
 		<?php
 		$fields = $checkout->get_checkout_fields( 'billing' );
+        
+        $i = 0;
 
 		foreach ( $fields as $key => $field ) {
+
+			if($i==0):
+	?>
+    
+   
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          Seus dados pessoais
+        </button>
+      </h2>
+    </div>
+
+    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+      <div class="card-body">
+        
+
+	<?php
+
+	    endif;
+
+	    if($key=="billing_nomedestinatario"):
+
+	?>
+
+            </div>
+		    </div>
+		  </div>  <!-- FECHANDO CARD 1 -->
+		  
+
+		
+
+		<div class="card">
+    <div class="card-header" id="headingTwo">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Destinatário
+        </button>
+      </h2>
+    </div>
+    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+      <div class="card-body">
+
+	<?php 
+
+	    endif;
+
+	    if($key=="billing_postcode"):
+
+	 ?>
+     
+ </div>
+		    </div>
+		  </div> <!-- FECHANDO CARD 1 -->
+		  
+
+		
+
+		<div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Endereço da entrega
+        </button>
+      </h2>
+    </div>
+    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+
+
+
+	 <?php
+
+	endif;
+
+
 			woocommerce_form_field( $key, $field, $checkout->get_value( $key ) );
+
+			$i++;
 		}
 		?>
-	</div>
+
+
+
+		  </div>
+    </div>
+  </div><!-- FECHANDO CARD 3 -->
+ </div>
+
+	</div> <!-- FECHANDO CARD PANELS -->
      
 
 	<?php do_action( 'woocommerce_after_checkout_billing_form', $checkout ); ?>

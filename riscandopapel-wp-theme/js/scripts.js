@@ -161,7 +161,85 @@ function calcularCep(){
 
 }
 
+// BUSCAR O ENDEREÇO PARA AUTO COMPLETAR
+function buscaCep(cep){
+       
+        // CONFIGURAÇÕES AJAX VANILLA
+        let xhr = new XMLHttpRequest();
+         
+        xhr.open('GET','https://viacep.com.br/ws/'+cep+'/json/',true);
+        
+        // INICIO AJAX VANILLA
+        xhr.onreadystatechange = () => {
 
+            if(xhr.readyState == 4) {
+
+              if(xhr.status == 200) {
+
+                console.log("RETORNO DOS DADOS BUSCA CEP:");
+                console.log(JSON.parse(xhr.responseText));
+
+              }else{
+                
+                console.log("SEM SUCESSO buscaCep()");
+                console.log(JSON.parse(xhr.responseText));
+
+              }
+
+              var dados = JSON.parse(xhr.responseText);
+              
+              if(dados.logradouro){
+                 $("#billing_address_1").val(dados.logradouro);
+                 $("#billing_neighborhood").val(dados.bairro);
+                 $("#billing_city").val(dados.localidade);
+                 $("#billing_state").val(dados.uf);
+              }
+              
+             
+            }
+
+        }; // FINAL AJAX VANILLA
+
+        /* EXECUTA */
+        xhr.send();
+
+    }
+
+
+// CAPTURAR O CEP DO USUÁRIO AINDA NO CARRINHO
+const cepCart = document.getElementById('calc_shipping_postcode');
+
+if(cepCart!==null){
+
+const inputHandlerCepCart = function(e) {
+        localStorage.setItem("cepCart",e.target.value);
+}
+
+cepCart.addEventListener('input', inputHandlerCepCart);
+
+}
+
+
+
+// CAPTURAR O CEP NA PÁGINA DO CHECKOIUT
+const source = document.getElementById('billing_postcode');
+
+if(source!==null){
+
+    const inputHandler = function(e) {
+        console.log(e.target.value+" / "+e.target.value.length);
+        
+        if(e.target.value.length>=8){
+            
+            buscaCep(e.target.value);
+
+        }
+
+    }
+
+    source.addEventListener('input', inputHandler);
+
+}
 
 
 function activeVariation(idVariacao,urlImagemVariacao){
@@ -201,6 +279,14 @@ function ordenarProdutos(ordenacao){
   if(ordenacao==5){ location.href="?orderby=popularity"; }
 
 }
+
+
+/* ZOOM DA IMAGEM */
+$('#zoom').zoom();
+
+
+
+
 
 
 

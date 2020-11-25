@@ -414,4 +414,11 @@ function get_free_shipping_minimum($zone_name = 'Brasil', $zone_name2 = 'OSASCO 
 }
 
 
+add_filter( 'woocommerce_billing_fields', function( $fields ) {
+    $fields['billing_address_2']['required'] = false;
+
+    return $fields;
+}, 20 );
+
+
 ?>

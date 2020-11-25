@@ -295,7 +295,10 @@
         var homeUrl = "<?php bloginfo('stylesheet_directory'); ?>/";
         var homeUrlDom = "<?php echo get_option('home'); ?>/";
 
+
+
     </script>
+    <script src='<?php bloginfo('stylesheet_directory'); ?>/js/jquery.zoom.js'></script>
 
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/scripts.js?v=<?php echo date("dmYHisu"); ?>"></script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/sweetalert2.min.js"></script>
@@ -320,6 +323,16 @@
 
                 return false;
             }
+
+            <?php if(is_page("finalizar-compra")): ?>
+
+            var cepCheckout = localStorage.getItem("cepCart");
+            if(cepCheckout!==null){
+              document.getElementById('billing_postcode').value = cepCheckout;
+              buscaCep(cepCheckout);
+            }
+        
+        <?php endif; ?>
 
     </script>
     <script type="text/javascript" src="<?php bloginfo('stylesheet_directory'); ?>/js/wow.min.js"></script>

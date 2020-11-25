@@ -6,9 +6,6 @@
 ?>
 
 
-
-
-
 <!-- CONTENT -->
 <section class="content">
     <div class="container">
@@ -73,7 +70,7 @@
                    <!-- FOTO DO PRODUTO -->
                    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-12 foto-produto" style="padding-left: 0px;">
                    
-                     <div class="imagem-produto-grande">
+                     <div class="imagem-produto-grande" id='zoom'>
                        
                        <?php 
                               
@@ -81,7 +78,7 @@
 
                        ?>
 
-                       <img src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" id="imagemPrincipalProduto" />
+                       <img class="image-zoom-available" src="<?php echo $image[0]; ?>" alt="<?php the_title(); ?>" id="imagemPrincipalProduto" />
 
                      </div>
 
@@ -351,126 +348,90 @@
                  <!-- PRODUTOS RELACIONADOS -->
                  <div class="row loop-menor">
 
-                       <!-- PRODUTO -->
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                            <div class="produto">
-                                <div class="imagem-produto" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/produto2.png') transparent no-repeat;background-size: 90% auto;background-position: center center;">
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        &nbsp;
-                                    </a>
-                                </div>
-                                <h2>
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas
-                                    </a>
-                                </h2>
-                                <h3>
-                                    <small><strike>R$20,90</strike></small>
-                                    R$ 20,90
-                                    <small>Em até 12x de R$ 2,90</small>
-                                    <span>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                </h3>
+
+                  <?php
+
+                       $args = array( 'post_type' => 'product', 
+                                      'showposts' => '4', 
+                                      'posts_per_page' => '4', 
+                                      'order' => 'RAND',
+                                      'orderby' => 'date'
+                                    );
+
+                                    $loop = new WP_Query( $args );
+                                    $tot_imp = 0;
+                                    $controle_postagens = 0;
+
+                                    while ( $loop->have_posts() ) : $loop->the_post(); 
+                                    
+                                    $_product = wc_get_product( get_the_ID() );
+                                    global $product;
+                                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+                         
+                   ?> 
+
+                    <!-- PRODUTO -->
+                    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4 col-12">
+                        <div class="produto">
+                            <div class="imagem-produto" style="background: url('<?php echo $image[0]; ?>') transparent no-repeat;background-size: 80% auto;background-position: center center;">
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    &nbsp;
+                                </a>
                             </div>
+                            <h2>
+                                <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                    <?php the_title(); ?>
+                                </a>
+                            </h2>
+                            <h3>
+                                <?php                      
+
+                                    if(!$product->is_type( 'variable' )):
+
+                                        $cem = $product->get_regular_price();
+                                        $x = $product->get_sale_price();
+                                        $valor = $x;
+                                        if($x==""): $valor = $cem;  endif;
+                              
+                                    else:
+
+                                        $cem = $product->get_variation_regular_price('min', true);
+                                        $x = $product->get_variation_sale_price('min', true);
+                                        $valor = $x;
+                                        if($x==""): $valor = $cem; endif;
+
+                                        if($x==$cem): $x = ""; endif;
+
+                                    endif;
+                                
+                                ?>
+                                
+                                <small>
+                                  <?php if($x!=""): ?>
+                                    <strike>R$<?php echo number_format($cem,2,",","."); ?></strike>
+                                  <?php endif; ?>
+                                </small>
+
+                                R$ <?php echo $valor; number_format($valor,2,",","."); ?>
+                                <small>Em <?php echo parcelamentoValorParcela($cem,$valor,12); ?></small>
+                                <span>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                    <i class="fa fa-star" aria-hidden="true"></i>
+                                </span>
+                            </h3>
                         </div>
-                        <!-- PRODUTO -->
+                    </div>
+                    <!-- PRODUTO -->
 
-                        <!-- PRODUTO -->
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                            <div class="produto">
-                                <div class="imagem-produto" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/produto3.png') transparent no-repeat;background-size: 90% auto;background-position: center center;">
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        &nbsp;
-                                    </a>
-                                </div>
-                                <h2>
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas
-                                    </a>
-                                </h2>
-                                <h3>
-                                    <small><strike>R$109,90</strike></small>
-                                    R$ 99,90
-                                    <small>Em até 12x de R$ 2,90</small>
-                                    <span>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                </h3>
-                            </div>
-                        </div>
-                        <!-- PRODUTO -->
+                  <?php
+                     
+                      endwhile; 
+                      wp_reset_query(); 
 
-
-                        <!-- PRODUTO -->
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                            <div class="produto">
-                                <div class="imagem-produto" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/produto4.jpg') transparent no-repeat;background-size: 90% auto;background-position: center center;">
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        &nbsp;
-                                    </a>
-                                </div>
-                                <h2>
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas
-                                    </a>
-                                </h2>
-                                <h3>
-                                    <small><strike>R$20,90</strike></small>
-                                    R$ 20,90
-                                    <small>Em até 12x de R$ 2,90</small>
-                                    <span>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                </h3>
-                            </div>
-                        </div>
-                        <!-- PRODUTO -->
-
-
-                        <!-- PRODUTO -->
-                        <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12">
-                            <div class="produto">
-                                <div class="imagem-produto" style="background: url('<?php bloginfo('stylesheet_directory'); ?>/images/produto-faber.png') transparent no-repeat;background-size: 90% auto;background-position: center center;">
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        &nbsp;
-                                    </a>
-                                </div>
-                                <h2>
-                                    <a href="#" title="Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas">
-                                        Caderno Tilibra Capa Dourada Escolar 2020, com pauta, 200 páginas
-                                    </a>
-                                </h2>
-                                <h3>
-                                    <small><strike>R$202,90</strike></small>
-                                    R$ 20,90
-                                    <small>Em até 12x de R$ 2,90</small>
-                                    <span>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                        <i class="fa fa-star" aria-hidden="true"></i>
-                                    </span>
-                                </h3>
-                            </div>
-                        </div>
-                        <!-- PRODUTO -->
-
-                 </div>
-                 <!-- PRODUTOS RELACIONADOS -->
+                   ?>
 
                
 
