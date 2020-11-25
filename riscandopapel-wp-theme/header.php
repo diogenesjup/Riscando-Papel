@@ -392,11 +392,13 @@ ysyss
 
                                 <?php endif; ?>
                                <ul>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Minha conta">Minha conta</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Favoritos">Favoritos</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meus dados">Meus dados</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Endereços">Endereços</a></li>
-                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Atendimento">Atendimento</a></li>
+                                   <li><a href="<?php echo get_option('home'); ?>/minha-conta/">Minha conta</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/orders/"> Meus pedidos</a></li>
+                                  <!--<li><a href="#"><i class="fa fa-heart"></i> Favoritos</a></li>-->
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-address/"> Meus endereços</a></li>
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/edit-account/">Dados pessoais</a></li>
+                                  <!--<li><a href="#"><i class="fa fa-usd"></i> Meus créditos</a></li>-->
+                                  <li><a href="<?php echo get_option('home'); ?>/minha-conta/customer-logout/?_wpnonce=fd4a690865"> Sair</a></li>
                                </ul>
                             </li>
                         </ul>
