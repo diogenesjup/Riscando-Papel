@@ -267,6 +267,21 @@ ysyss
                     
                     <a href="<?php echo get_option('home'); ?>/carrinho" title="Carrinho" class="toggle-carrinho">
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/carrinho.svg" alt="Carrinho" />
+                        <?php
+                           
+                            global $woocommerce;
+                            $total_carrinho = $woocommerce->cart->cart_contents_count;
+
+                            if($total_carrinho>0):
+
+                        ?>
+                        <span><?php echo $total_carrinho; ?></span>
+                        <?php  
+                             
+                             endif;
+
+                        ?>
+                    
                     </a>
 
                     <nav>
@@ -372,6 +387,20 @@ ysyss
                     
                     <a href="<?php echo get_option('home'); ?>/carrinho" title="Carrinho" class="toggle-carrinho">
                         <img src="<?php bloginfo('stylesheet_directory'); ?>/images/carrinho.svg" alt="Carrinho" />
+                        <?php
+                           
+                            global $woocommerce;
+                            $total_carrinho = $woocommerce->cart->cart_contents_count;
+
+                            if($total_carrinho>0):
+
+                        ?>
+                        <span><?php echo $total_carrinho; ?></span>
+                        <?php  
+                             
+                             endif;
+
+                        ?>
                     </a>
 
                     <nav>

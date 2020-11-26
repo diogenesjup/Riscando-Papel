@@ -214,6 +214,22 @@ header .toggle-carrinho{
   z-index: 999;
 }
 
+header .toggle-carrinho span{
+  position: absolute;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  background: #ff0000;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 11px;
+  top: -9px;
+  right: -11px;
+  padding-top: 2px;
+} 
+
 header .carrinho{
   text-align: center;
 }

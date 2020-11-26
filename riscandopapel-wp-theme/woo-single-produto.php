@@ -314,7 +314,8 @@
 
                       
                       <hr>
-
+                     
+                      <!---
                       <div class="caixa-simulador-frete">
                         <p>
                           Simular frete:<br>
@@ -323,6 +324,7 @@
                         <div id="caixa-cep">
                         </div>
                       </div>
+                    -->
 
                    </div>
                    <!-- VARIACOES / PRECO / ADD TO CART / FRETE -->

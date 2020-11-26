@@ -101,6 +101,7 @@ jQuery(document).ready(function ($) {
 
 function mudarImagemProduto(srcImagem){
     $("#imagemPrincipalProduto").attr("src",srcImagem);
+    $('#zoom').zoom();
 }
 
 

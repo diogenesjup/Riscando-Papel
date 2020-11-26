@@ -15,15 +15,15 @@
 	
 	// Código e senha da empresa, se você tiver contrato com os correios, se não tiver deixe vazio.
 
-	$parametros['nCdEmpresa'] = '';
-	$parametros['sDsSenha'] = '';
+	$parametros['nCdEmpresa'] = '20099053';
+	$parametros['sDsSenha'] = 's8j989';
 
 	// CEP de origem e destino. Esse parametro precisa ser numérico, sem "-" (hífen) espaços ou algo diferente de um número.
 	$parametros['sCepOrigem'] = '06150350';
 	$parametros['sCepDestino'] = $cep_destino;
 
 	// O peso do produto deverá ser enviado em quilogramas, leve em consideração que isso deverá incluir o peso da embalagem.
-	$parametros['nVlPeso'] = '1';
+	$parametros['nVlPeso'] = '0.50';
 
 	// O formato tem apenas duas opções: 1 para caixa / pacote e 2 para rolo/prisma.
 	$parametros['nCdFormato'] = '1';
@@ -104,15 +104,15 @@
 	
 	// Código e senha da empresa, se você tiver contrato com os correios, se não tiver deixe vazio.
 
-	$parametros['nCdEmpresa'] = '';
-	$parametros['sDsSenha'] = '';
+	$parametros['nCdEmpresa'] = '20099053';
+	$parametros['sDsSenha'] = 's8j989';
 
 	// CEP de origem e destino. Esse parametro precisa ser numérico, sem "-" (hífen) espaços ou algo diferente de um número.
-	$parametros['sCepOrigem'] = '09560050';
+	$parametros['sCepOrigem'] = '06150350';
 	$parametros['sCepDestino'] = $cep_destino;
 
 	// O peso do produto deverá ser enviado em quilogramas, leve em consideração que isso deverá incluir o peso da embalagem.
-	$parametros['nVlPeso'] = '1';
+	$parametros['nVlPeso'] = '0.50';
 
 	// O formato tem apenas duas opções: 1 para caixa / pacote e 2 para rolo/prisma.
 	$parametros['nCdFormato'] = '1';

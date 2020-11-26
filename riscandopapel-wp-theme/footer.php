@@ -331,6 +331,20 @@
               document.getElementById('billing_postcode').value = cepCheckout;
               buscaCep(cepCheckout);
             }
+
+            // MARCAR A PRIMEIRA OPCAO DE FRETE COMO CHECKED
+            setTimeout(function(){ $("#shipping_method_0_52").prop("checked", true); }, 3000);
+
+            $('input[name="shipping_method"]').on("click", function(e) {
+
+                $(this).prop("checked", true); 
+            });
+                        
+            $( document.body ).on( 'updated_cart_totals', function(){
+                console.log("CHAMADA AJAX IDENTIFICADA");
+                $(".cart-page-desktop:not(:first)").remove();
+                $(".cart-page-mobile:not(:first)").remove();
+            });
         
         <?php endif; ?>
 

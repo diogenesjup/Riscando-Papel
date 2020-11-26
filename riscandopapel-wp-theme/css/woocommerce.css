@@ -1409,3 +1409,12 @@ section.addresses .woocommerce .col2-set .col-2, section.addresses .woocommerce-
 }
 
 
+
+.woocommerce #content table.cart img, 
+.woocommerce table.cart img, 
+.woocommerce-page #content table.cart img, 
+.woocommerce-page table.cart img {
+    height: auto !important;
+    width: 100px !important;
+    min-height: unset !important;
+}
