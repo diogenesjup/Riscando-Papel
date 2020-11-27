@@ -414,7 +414,7 @@
                                   <?php endif; ?>
                                 </small>
 
-                                R$ <?php echo $valor; number_format($valor,2,",","."); ?>
+                                R$ <?php echo number_format($valor,2,",","."); ?>
                                 <small>Em <?php echo parcelamentoValorParcela($cem,$valor,12); ?></small>
                                 <span>
                                     <i class="fa fa-star" aria-hidden="true"></i>

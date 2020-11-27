@@ -126,11 +126,13 @@
                             <img src="<?php the_sub_field("icone"); ?>" alt="<?php the_sub_field("titulo"); ?>" />
                             <h3>
                                 <?php the_sub_field("titulo"); ?>
+                                <?php if(get_sub_field("link_de_destino")!=""): ?>
                                 <small>
                                     <a href="<?php the_sub_field("link_de_destino"); ?>" title="saiba mais">
                                         saiba mais
                                     </a>
                                 </small>
+                              <?php endif; ?>
                             </h3>
                         </div>
                         <!-- COLUNA -->
@@ -242,12 +244,14 @@
 
              $categoria_destaque = get_field("categorias_de_destaque");
 
-             $id = $categoria_destaque[0];
+             
+
+             //$id = $categoria_destaque[0];
 
              $args = array( 'post_type' => 'product', 
                             'showposts' => '12', 
                             'posts_per_page' => '12', 
-                            'product_cat' => $id
+                            'product_cat' => $categoria_destaque 
                           );
 
                           $loop = new WP_Query( $args );
@@ -304,7 +308,7 @@
                           <?php endif; ?>
                         </small>
 
-                        R$ <?php echo $valor; number_format($valor,2,",","."); ?>
+                        R$ <?php echo number_format($valor,2,",","."); ?>
                         <small>Em <?php echo parcelamentoValorParcela($cem,$valor,12); ?></small>
                         <span>
                             <i class="fa fa-star" aria-hidden="true"></i>
