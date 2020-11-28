@@ -156,7 +156,7 @@ if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_requir
 							Pagamento
 						</h3>
 		                <h5>
-		                	Escolha forma de pagamento
+		                	Com toda a segurança e tecnologia.
 		                </h5>
 		            
 

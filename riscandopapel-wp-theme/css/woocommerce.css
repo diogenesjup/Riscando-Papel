@@ -689,6 +689,7 @@ span.onsale{
     color: #747474;
 }
 
+.actions a.btn.btn-default,
 .actions button.btn.btn-default{
     background: #B4B4B4 !important;
     border-color: #B4B4B4 !important;
@@ -1418,3 +1419,17 @@ section.addresses .woocommerce .col2-set .col-2, section.addresses .woocommerce-
     width: 100px !important;
     min-height: unset !important;
 }
+
+.shipping-calculator-form span{width:100%;}
+.shipping-calculator-form{display: block !important;}
+
+
+
+
+
+
+
+
+
+
+

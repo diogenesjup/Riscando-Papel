@@ -27,7 +27,8 @@ do_action( 'woocommerce_before_account_navigation' );
 
 				<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 sidebar sidebar-minha-conta">
 					
-					<h3>Olá, Diogenes</h3>
+					<?php $current_user = wp_get_current_user(); ?>
+					<h3>Olá, <?php echo $current_user->user_login; ?></h3>
 	                 <nav>
 	                    <ul>
 	                        <li><a href="<?php echo get_option('home'); ?>/minha-conta/"><i class="fa fa-user"></i> Minha conta</a></li>

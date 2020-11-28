@@ -124,9 +124,9 @@ ysyss
                 </a>
             </div>
             <div class="col menu-3">
-                <a href="<?php echo get_option('home'); ?>/contato" title="Contato">
-                    <i class="fa fa-envelope"></i> <br clear="both">
-                    Contato
+                <a href="<?php the_field("link_api_whatsapp",17433); ?>" title="WhatsApp">
+                    <i class="fa fa-whatsapp"></i> <br clear="both">
+                    WhatsApp
                 </a>
             </div>
             <div class="col menu-4">

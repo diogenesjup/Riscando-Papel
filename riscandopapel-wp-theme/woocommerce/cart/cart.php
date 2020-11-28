@@ -143,7 +143,11 @@ do_action( 'woocommerce_before_cart' ); ?>
 										</div>
 									<?php } ?>
 
-									<button type="submit" class="btn btn-default" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( 'Update cart', 'woocommerce' ); ?></button>
+									<button type="submit" class="btn btn-default" name="update_cart" value="<?php esc_attr_e( 'Atualizar', 'woocommerce' ); ?>">Atualizar</button>
+
+									<a href="<?php echo get_option('home'); ?>/produtos/" class="btn btn-default" title="Continuar comprando">
+										Continuar comprando
+									</a>
 
 									<?php do_action( 'woocommerce_cart_actions' ); ?>
 

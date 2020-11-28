@@ -649,11 +649,22 @@ section.home-vitrine #carousel-custom-dots li.owl-dot.active{
     max-width: unset;
     margin-top: 5px;
 }
+
+/*
 .mini-icones .col:nth-child(3) img{
     margin-bottom: 18px;
     margin-top: 5px;
     width: 27px;
 }
+*/
+.mini-icones .col:nth-child(3) img{
+    margin-bottom: 28px;
+    width: 35px;
+    max-width: unset;
+    margin-top: 5px;
+}
+
+
 .mini-icones .col:nth-child(4) img{
     margin-bottom: 15px;
     margin-top: 5px;

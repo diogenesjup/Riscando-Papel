@@ -167,10 +167,10 @@
                         <!-- SUB COLUNA -->
                         <!-- SUB COLUNA -->
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-12 colunas">
-                            <h3>Produtos</h3>
+                            <h3>Institucional</h3>
                             <nav>
                                 <ul>
-                                    <?php $itens_menu = wp_get_menu_array("Produtos"); ?> 
+                                    <?php $itens_menu = wp_get_menu_array("Institucional"); ?> 
                                     <?php 
                                      $menu_corrente = 0;
                                      foreach($itens_menu as $menu){
@@ -215,7 +215,7 @@
                                     <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meus Pedidos">Meus pedidos</a></li>
                                     <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Endereços">Endereços</a></li>
                                     <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Meu perfil">Meu perfil</a></li>
-                                    <li><a href="<?php echo get_option('home'); ?>/minha-conta" title="Favoritos">Favoritos</a></li>
+                                  
                                 </ul>
                             </nav>
                         </div>
