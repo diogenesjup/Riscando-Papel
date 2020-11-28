@@ -18,7 +18,6 @@
 	<img src="https://www.diogenesjunior.com.br/wp-content/uploads/2020/11/Captura-de-Tela-2020-11-28-a%CC%80s-17.42.52.png" style="width: 100%;" />
 </p>
 
-
 <p>
 	Velocidade da loja virtual Riscando Papel, DURANTE o meu desenvolvimento (versão em desenvolvimento da loja virtual):
 </p>
@@ -55,11 +54,15 @@
 </p>
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/xKMnAh_1YlU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+	Vídeo demonstrativo 1 https://www.youtube.com/watch?v=xKMnAh_1YlU&feature=emb_logo
+</p>
 
 <p>&nbsp;</p>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/iXVJUxGtXYg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>
+	Vídeo demonstrativo 2 https://youtu.be/iXVJUxGtXYg
+</p>
 
 
 
